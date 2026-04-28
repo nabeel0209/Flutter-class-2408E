@@ -43,35 +43,88 @@ import 'package:flutter/material.dart';
 //   );
 // }
 
+// void main() {
+//   runApp(MaterialApp(home: Israruddin()));
+// }
+//
+// class Israruddin extends StatefulWidget {
+//   @override
+//   State<Israruddin> createState() => _IsraruddinState();
+// }
+//
+// class _IsraruddinState extends State<Israruddin> {
+//   int _counter = 0;
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: Text('My Tasbeeh Application')),
+//       body: Column(
+//         children: [
+//           ElevatedButton(
+//             onPressed: () {
+//               setState(() {
+//                 _counter++;
+//               });
+//             },
+//             child: Text('Increment'),
+//           ),
+//           Text('Count: $_counter'),
+//         ],
+//       ),
+//     );
+//   }
+//
+// }
+
+
+
+// void main() {
+//   runApp(
+//     MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(title: Text('My App')),
+//         body: Row(
+//           children: [
+//             Container(
+//               decoration: BoxDecoration(
+//                 borderRadius: BorderRadius.circular(2)
+//               ),
+//               padding: EdgeInsets.all(20),
+//               color: Colors.yellow,
+//               height: 200,
+//               width: 200,
+//               child: Center(
+//                 child: Text(
+//                   'Hello World',
+//                   style: TextStyle(color: Colors.blueAccent),
+//                 ),
+//               ),
+//             ),
+//             Container(
+//               margin: EdgeInsets.all(20),
+//               child: Text(
+//                 'Hello World',
+//                 style: TextStyle(color: Colors.blueAccent),
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     ),
+//   );
+// }
+
 void main() {
-  runApp(MaterialApp(home: Israruddin()));
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('Hello World', style: TextStyle(color: Colors.white)), backgroundColor: Colors.black,),
+        body: Container(
+          child: Text('Hello World'),
+        ),
+      )
+    )
+  );
 }
-
-class Israruddin extends StatefulWidget {
-  @override
-  State<Israruddin> createState() => _IsraruddinState();
-}
-
-class _IsraruddinState extends State<Israruddin> {
-  int _counter = 0;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('My Tasbeeh Application')),
-      body: Column(
-        children: [
-          ElevatedButton(
-            onPressed: () {
-              setState(() {
-                _counter++;
-              });
-            },
-            child: Text('Increment'),
-          ),
-          Text('Count: $_counter'),
-        ],
-      ),
-    );
-  }
-}
+ 
