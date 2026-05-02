@@ -77,8 +77,6 @@ import 'package:flutter/material.dart';
 //
 // }
 
-
-
 // void main() {
 //   runApp(
 //     MaterialApp(
@@ -115,16 +113,120 @@ import 'package:flutter/material.dart';
 //   );
 // }
 
+// User Field Work
+//
+// void main() {
+//   runApp(MaterialApp(home: UserInputList()));
+// }
+//
+// class UserInputList extends StatefulWidget {
+//   const UserInputList({super.key});
+//
+//   @override
+//   State<UserInputList> createState() => _UserInputListState();
+// }
+//
+// class _UserInputListState extends State<UserInputList> {
+//   TextEditingController userNameController = TextEditingController();
+//   TextEditingController ageController = TextEditingController();
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: Text('User Input List')),
+//       body: Column(
+//         children: [
+//           Row(
+//             children: [
+//               Expanded(child: TextField(
+//                 controller: userNameController,
+//                 decoration: InputDecoration(
+//                   hintText: 'Enter your name',
+//                 ),
+//               )),
+//               TextField(
+//                 controller: ageController,
+//                 decoration: InputDecoration(
+//                   hintText: 'Enter your age',
+//                 ),
+//               )
+//             ],
+//           )
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+
+import 'package:flutter/material.dart';
+
 void main() {
   runApp(
     MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: Text('Hello World', style: TextStyle(color: Colors.white)), backgroundColor: Colors.black,),
-        body: Container(
-          child: Text('Hello World'),
-        ),
-      )
-    )
+      home: InputType(),
+    ),
   );
 }
- 
+
+class InputType extends StatefulWidget {
+  const InputType({super.key});
+
+  @override
+  State<InputType> createState() => _InputTypeState();
+}
+
+class _InputTypeState extends State<InputType> {
+  TextEditingController namecontroller = TextEditingController();
+  TextEditingController agecontroller = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+
+    List<Map<String, dynamic>> users = [];
+
+    void addUser() {
+      setState(() {
+        users.add({
+          'name': namecontroller.text,
+          'age': agecontroller.text
+        });
+      });
+       print('user added successfully');
+
+    }
+
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Acknowledge ME !'),
+      ),
+      body: Column(
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: TextField(
+                  controller: namecontroller,
+                  decoration: const InputDecoration(
+                    hintText: 'Enter your name',
+                  ),
+                ),
+              ),
+              Expanded(
+                child: TextField(
+                  controller: agecontroller,
+                  decoration: const InputDecoration(
+                    hintText: 'Enter your age',
+                  ),
+                ),
+                // ElevatedButton(
+                //   onPressed: ,
+                // )
+              )
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
